@@ -23,6 +23,7 @@ export const taskSlice = createSlice({
     ],
   },
   reducers: {
+    //タスクを作成する処理
     newTask: (state, action) => {
       state.idCount++;
       const newItem = {
@@ -33,6 +34,7 @@ export const taskSlice = createSlice({
       state.tasks = [newItem, ...state.tasks];
     },
 
+    //タスクのチェックボックスがtrueかfalseか判断する処理
     completeTask: (state, action) => {
       const task = state.tasks.find((t) => t.id === action.payload.id);
       if (task) {
@@ -40,6 +42,7 @@ export const taskSlice = createSlice({
       }
     },
 
+    //タスクを削除する処理
     deleteTask: (state, action) => {
       //選択されたタスク以外のものをtasksに上書きする
       state.tasks = state.tasks.filter((t) => t.id !== action.payload.id);
