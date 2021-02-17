@@ -19,7 +19,7 @@ const TaskInput = () => {
         type="text"
         value={editTitle}
         onChange={handleTitleChange}
-        placeholder="please type in"
+        placeholder="タスクの追加"
       />
       <button>追加</button>
     </form>
